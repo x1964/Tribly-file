@@ -10,7 +10,74 @@
 
   <!-- اضف كل صفحة ثانية هنا -->
   <url>
-    <loc>https://tribly.online/about</loc>
+    <loc>https://tribly.online/chat</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+    <url>
+    <loc>https://tribly.online/config</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+      <url>
+    <loc>https://tribly.online/creat_post</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>    <url>
+    <loc>https://tribly.online/home</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>    <url>
+    <loc>https://tribly.online/index</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>    <url>
+    <loc>https://tribly.online/login</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>    <url>
+    <loc>https://tribly.online/logout</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>    <url>
+    <loc>https://tribly.online/market</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>    <url>
+    <loc>https://tribly.online/massages</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>    <url>
+    <loc>https://tribly.online/notifications</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>    <url>
+    <loc>https://tribly.online/profile</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>    <url>
+    <loc>https://tribly.online/setting</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>    <url>
+    <loc>https://tribly.online/verified</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>    <url>
+    <loc>https://tribly.online/videos</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
