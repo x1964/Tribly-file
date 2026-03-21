@@ -3,243 +3,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>جاري تحويلك إلى Tribly...</title>
-    
-    <!-- تحويل تلقائي بعد ثانية واحدة -->
-    <meta http-equiv="refresh" content="1; url=https://triblyapp.infinityfreeapp.com/">
-    
+    <title>Tribly</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+
+        :root {
+            --green-deep: #0a2e1a;
+            --green-mid: #1a5c35;
+            --green-bright: #2ecc71;
+            --green-glow: #00d26a;
+            --cream: #f0ead6;
         }
-        
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             min-height: 100vh;
+            background: var(--green-deep);
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #000000;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow: hidden;
-        }
-        
-        .loader-container {
-            text-align: center;
-            position: relative;
-        }
-        
-        /* الدائرة المتحركة */
-        .spinner {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 30px;
-            position: relative;
-        }
-        
-        .spinner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            border: 4px solid transparent;
-            border-top-color: #00d26a;
-            border-right-color: #2ecc71;
-            border-bottom-color: #27ae60;
-            border-left-color: #58d68d;
-            animation: spin 1.5s linear infinite;
-        }
-        
-        .spinner::after {
-            content: '';
-            position: absolute;
-            top: 15px;
-            left: 15px;
-            right: 15px;
-            bottom: 15px;
-            border-radius: 50%;
-            border: 3px solid transparent;
-            border-top-color: #00d26a;
-            border-bottom-color: #2ecc71;
-            animation: spin 1s linear infinite reverse;
-        }
-        
-        /* اللوجو في المنتصف */
-        .logo {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 10;
+            font-family: 'Playfair Display', serif;
         }
 
-        .logo img {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-            filter: drop-shadow(0 0 10px rgba(0, 210, 106, 0.5));
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        /* النص */
-        .loading-text {
-            color: #fff;
-            font-size: 22px;
-            font-weight: 500;
-            margin-bottom: 10px;
-            opacity: 0;
-            animation: fadeInUp 0.6s ease forwards;
-        }
-        
-        .sub-text {
-            color: #58d68d;
-            font-size: 14px;
-            opacity: 0;
-            animation: fadeInUp 0.6s ease 0.3s forwards;
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* 3 ورقات شجر جمب بعض بتترفعوا واحدة ورا واحدة */
-        .leaves-container {
+        /* SVG leaves scene */
+        .scene {
+            position: relative;
+            width: 340px;
+            height: 340px;
             display: flex;
             justify-content: center;
-            align-items: flex-end;
-            gap: 15px;
-            margin-top: 20px;
-            height: 60px;
+            align-items: center;
         }
-        
-        .leaf {
-            font-size: 35px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: leafFloat 1.2s ease-in-out forwards;
-            filter: drop-shadow(0 0 10px rgba(0, 210, 106, 0.5));
-        }
-        
-        .leaf:nth-child(1) {
-            animation-delay: 0s;
-        }
-        
-        .leaf:nth-child(2) {
-            animation-delay: 0.3s;
-        }
-        
-        .leaf:nth-child(3) {
-            animation-delay: 0.6s;
-        }
-        
-        @keyframes leafFloat {
-            0% {
-                opacity: 0;
-                transform: translateY(30px) scale(0.5);
-            }
-            50% {
-                opacity: 1;
-                transform: translateY(-10px) scale(1.1);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-        
-        /* تأثير الخلفية */
-        .bg-particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            overflow: hidden;
-        }
-        
-        .particle {
+
+        /* Ground line */
+        .ground {
             position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(0, 210, 106, 0.3);
-            border-radius: 50%;
-            animation: float 15s infinite;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 180px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--green-bright), transparent);
+            animation: groundFade 0.5s ease forwards;
         }
-        
-        .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
-        .particle:nth-child(2) { left: 30%; animation-delay: 2s; }
-        .particle:nth-child(3) { left: 50%; animation-delay: 4s; }
-        .particle:nth-child(4) { left: 70%; animation-delay: 6s; }
-        .particle:nth-child(5) { left: 90%; animation-delay: 8s; }
-        
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(100vh) scale(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-10vh) scale(1);
-                opacity: 0;
-            }
+
+        /* Stem */
+        .stem {
+            position: absolute;
+            bottom: 42px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            background: linear-gradient(to top, var(--green-bright), var(--green-glow));
+            height: 0;
+            border-radius: 3px;
+            animation: growStem 1s cubic-bezier(0.22,1,0.36,1) 0.4s forwards;
+            transform-origin: bottom center;
+        }
+
+        @keyframes growStem {
+            to { height: 140px; }
+        }
+
+        /* Leaves */
+        .leaf-svg {
+            position: absolute;
+            opacity: 0;
+            transform-origin: bottom center;
+        }
+
+        /* Left leaf */
+        .leaf-left {
+            bottom: 120px;
+            left: calc(50% - 70px);
+            animation: growLeafLeft 0.8s cubic-bezier(0.34,1.56,0.64,1) 1.3s forwards;
+        }
+
+        /* Right leaf */
+        .leaf-right {
+            bottom: 145px;
+            left: calc(50% - 10px);
+            animation: growLeafRight 0.8s cubic-bezier(0.34,1.56,0.64,1) 1.7s forwards;
+        }
+
+        /* Top leaf */
+        .leaf-top {
+            bottom: 178px;
+            left: calc(50% - 35px);
+            animation: growLeafTop 0.8s cubic-bezier(0.34,1.56,0.64,1) 2.1s forwards;
+        }
+
+        @keyframes growLeafLeft {
+            0% { opacity: 0; transform: scale(0) rotate(-40deg); }
+            60% { opacity: 1; transform: scale(1.15) rotate(-25deg); }
+            100% { opacity: 1; transform: scale(1) rotate(-30deg); }
+        }
+
+        @keyframes growLeafRight {
+            0% { opacity: 0; transform: scale(0) rotate(20deg); }
+            60% { opacity: 1; transform: scale(1.15) rotate(35deg); }
+            100% { opacity: 1; transform: scale(1) rotate(28deg); }
+        }
+
+        @keyframes growLeafTop {
+            0% { opacity: 0; transform: scale(0) rotate(-5deg); }
+            60% { opacity: 1; transform: scale(1.15) rotate(5deg); }
+            100% { opacity: 1; transform: scale(1) rotate(0deg); }
+        }
+
+        /* Gentle sway after grow */
+        .leaf-left  { animation: growLeafLeft 0.8s cubic-bezier(0.34,1.56,0.64,1) 1.3s forwards, swayLeft  3s ease-in-out 2.2s infinite; }
+        .leaf-right { animation: growLeafRight 0.8s cubic-bezier(0.34,1.56,0.64,1) 1.7s forwards, swayRight 3s ease-in-out 2.6s infinite; }
+        .leaf-top   { animation: growLeafTop  0.8s cubic-bezier(0.34,1.56,0.64,1) 2.1s forwards, swayTop   3s ease-in-out 3s   infinite; }
+
+        @keyframes swayLeft {
+            0%,100% { transform: scale(1) rotate(-30deg); }
+            50%      { transform: scale(1) rotate(-25deg); }
+        }
+        @keyframes swayRight {
+            0%,100% { transform: scale(1) rotate(28deg); }
+            50%      { transform: scale(1) rotate(34deg); }
+        }
+        @keyframes swayTop {
+            0%,100% { transform: scale(1) rotate(0deg); }
+            50%      { transform: scale(1) rotate(6deg); }
+        }
+
+        /* Dew drops */
+        .dew {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(0,210,106,0.7);
+            filter: blur(1px);
+            opacity: 0;
+        }
+
+        .dew-1 { bottom: 190px; left: calc(50% - 18px); animation: dewDrop 1s ease 2.9s forwards; }
+        .dew-2 { bottom: 220px; left: calc(50% + 8px);  animation: dewDrop 1s ease 3.2s forwards; }
+
+        @keyframes dewDrop {
+            0%  { opacity: 0; transform: translateY(0); }
+            20% { opacity: 1; }
+            100%{ opacity: 0; transform: translateY(30px); }
+        }
+
+        /* Glow ring at base */
+        .glow-ring {
+            position: absolute;
+            bottom: 36px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,210,106,0.25) 0%, transparent 70%);
+            animation: glowExpand 1s ease 0.3s forwards;
+        }
+
+        @keyframes glowExpand {
+            to { width: 120px; height: 120px; margin-left: -60px; margin-bottom: -60px; }
+        }
+
+        /* Logo + text */
+        .brand {
+            position: absolute;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            opacity: 0;
+            animation: fadeUp 0.8s ease 2.5s forwards;
+            white-space: nowrap;
+        }
+
+        .brand-name {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--cream);
+            text-shadow: 0 0 20px rgba(0,210,106,0.4);
+        }
+
+        .brand-sub {
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: var(--green-glow);
+            margin-top: 4px;
+            font-weight: 400;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+            to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+        }
+
+        /* Floating particles */
+        .particle {
+            position: fixed;
+            border-radius: 50%;
+            background: rgba(0,210,106,0.2);
+            pointer-events: none;
+            animation: floatUp linear infinite;
+        }
+
+        @keyframes floatUp {
+            0%   { transform: translateY(110vh) scale(0); opacity: 0; }
+            10%  { opacity: 1; }
+            90%  { opacity: 0.6; }
+            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+        }
+
+        @keyframes groundFade {
+            from { opacity: 0; } to { opacity: 1; }
         }
     </style>
 </head>
 <body>
-    <!-- جسيمات خلفية -->
-    <div class="bg-particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-    </div>
-    
-    <div class="loader-container">
-        <div class="spinner">
-            <div class="logo">
-                <img src="logo icon.png" alt="Tribly Logo">
-            </div>
-        </div>
-        <div class="loading-text">جاري تحويلك إلى Tribly...</div>
-        <div class="sub-text">يرجى الانتظار لحظات</div>
-        
-        <!-- 3 ورقات شجر -->
-        <div class="leaves-container">
-            <div class="leaf">🍃</div>
-            <div class="leaf">🌿</div>
-            <div class="leaf">🍃</div>
-        </div>
-    </div>
-    
+
+    <!-- Floating particles -->
     <script>
-        // تحويل فوري عند تحميل الصفحة
-        window.onload = function() {
-            setTimeout(function() {
-                window.location.replace("https://triblyapp.infinityfreeapp.com/");
-            }, 1000);
-        };
+        for (let i = 0; i < 12; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            const size = Math.random() * 6 + 3;
+            p.style.cssText = `
+                width:${size}px; height:${size}px;
+                left:${Math.random()*100}%;
+                animation-duration:${10+Math.random()*12}s;
+                animation-delay:${Math.random()*8}s;
+            `;
+            document.body.appendChild(p);
+        }
+    </script>
+
+    <div class="scene">
+        <!-- Glow at base -->
+        <div class="glow-ring"></div>
+
+        <!-- Ground -->
+        <div class="ground"></div>
+
+        <!-- Stem -->
+        <div class="stem"></div>
+
+        <!-- Left leaf -->
+        <svg class="leaf-svg leaf-left" width="70" height="50" viewBox="0 0 70 50">
+            <defs>
+                <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#2ecc71"/>
+                    <stop offset="100%" stop-color="#0a4a22"/>
+                </linearGradient>
+            </defs>
+            <path d="M60,45 Q0,40 5,5 Q35,15 60,45 Z" fill="url(#lg1)" opacity="0.95"/>
+            <path d="M60,45 Q30,30 5,5" stroke="rgba(0,210,106,0.4)" stroke-width="1" fill="none"/>
+            <path d="M60,45 Q40,25 20,8" stroke="rgba(0,210,106,0.2)" stroke-width="0.7" fill="none"/>
+        </svg>
+
+        <!-- Right leaf -->
+        <svg class="leaf-svg leaf-right" width="65" height="48" viewBox="0 0 65 48">
+            <defs>
+                <linearGradient id="lg2" x1="100%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#27ae60"/>
+                    <stop offset="100%" stop-color="#1a5c35"/>
+                </linearGradient>
+            </defs>
+            <path d="M5,43 Q65,38 60,4 Q30,14 5,43 Z" fill="url(#lg2)" opacity="0.95"/>
+            <path d="M5,43 Q35,28 60,4" stroke="rgba(0,210,106,0.4)" stroke-width="1" fill="none"/>
+        </svg>
+
+        <!-- Top leaf -->
+        <svg class="leaf-svg leaf-top" width="60" height="80" viewBox="0 0 60 80">
+            <defs>
+                <linearGradient id="lg3" x1="50%" y1="100%" x2="50%" y2="0%">
+                    <stop offset="0%" stop-color="#2ecc71"/>
+                    <stop offset="100%" stop-color="#00d26a"/>
+                </linearGradient>
+            </defs>
+            <path d="M30,75 Q0,40 15,5 Q30,20 45,5 Q60,40 30,75 Z" fill="url(#lg3)" opacity="0.95"/>
+            <path d="M30,75 Q30,40 30,5" stroke="rgba(255,255,255,0.2)" stroke-width="1" fill="none"/>
+        </svg>
+
+        <!-- Dew drops -->
+        <div class="dew dew-1"></div>
+        <div class="dew dew-2"></div>
+
+        <!-- Brand -->
+        <div class="brand">
+            <div class="brand-name">Tribly</div>
+            <div class="brand-sub">GROWING TOGETHER</div>
+        </div>
+    </div>
+
+    <script>
+        // Redirect after animation finishes
+        setTimeout(function() {
+            window.location.replace("https://triblyapp.infinityfreeapp.com/");
+        }, 4500);
     </script>
 </body>
 </html>
