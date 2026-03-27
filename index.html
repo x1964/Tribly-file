@@ -3,364 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tribly - شبكة التواصل الاجتماعي</title>
-
-    <!-- SEO Basic -->
-    <meta name="description" content="Tribly - منصة التواصل الاجتماعي التي تجمعك بأصحابك بطريقة مختلفة. انضم الآن!">
-    <meta name="keywords" content="Tribly, تريبلي, تواصل اجتماعي, شبكة اجتماعية, أصحاب, مجتمع">
-    <meta name="author" content="Tribly">
-    <meta name="robots" content="index, follow">
-
-    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://triblyapp.infinityfreeapp.com/">
-    <meta property="og:title" content="Tribly - شبكة التواصل الاجتماعي">
-    <meta property="og:description" content="منصة التواصل الاجتماعي التي تجمعك بأصحابك بطريقة مختلفة. انضم الآن!">
-    <meta property="og:image" content="maskable_icon (2).png">
-    <meta property="og:locale" content="ar_EG">
-    <meta property="og:site_name" content="Tribly">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Tribly - شبكة التواصل الاجتماعي">
-    <meta name="twitter:description" content="منصة التواصل الاجتماعي التي تجمعك بأصحابك بطريقة مختلفة. انضم الآن!">
-    <meta name="twitter:image" content="maskable_icon (2).png">
-
-    <!-- Canonical -->
-    <link rel="canonical" href="https://triblyapp.infinityfreeapp.com/">
-
-    <!-- Favicon & Icons -->
-    <link rel="icon" type="image/png" href="maskable_icon (2).png">
-    <link rel="apple-touch-icon" href="maskable_icon (2).png">
-    <link rel="shortcut icon" href="maskable_icon (2).png">
-
-    <!-- JSON-LD Structured Data (Google Rich Results) -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Tribly",
-      "alternateName": "تريبلي",
-      "url": "https://triblyapp.infinityfreeapp.com/",
-      "description": "منصة التواصل الاجتماعي التي تجمعك بأصحابك بطريقة مختلفة. انضم الآن!",
-      "inLanguage": ["ar", "en"],
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://triblyapp.infinityfreeapp.com/?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Tribly",
-      "url": "https://triblyapp.infinityfreeapp.com/",
-      "logo": "https://triblyapp.infinityfreeapp.com/maskable_icon%20(2).png",
-      "description": "منصة التواصل الاجتماعي التي تجمعك بأصحابك بطريقة مختلفة"
-    }
-    </script>
-
+    <title>Tribly</title>
+    <link rel="icon" href="maskable_icon (2).png" type="image/png">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
-
-        :root {
-            --green-deep: #0a2e1a;
-            --green-mid: #1a5c35;
-            --green-bright: #2ecc71;
-            --green-glow: #00d26a;
-            --cream: #f0ead6;
-        }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
             min-height: 100vh;
-            background: var(--green-deep);
+            background: linear-gradient(135deg, #0a2e1a, #1a5c35);
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
-            font-family: 'Playfair Display', serif;
+            font-family: system-ui, sans-serif;
         }
-
-        /* SVG leaves scene */
-        .scene {
-            position: relative;
-            width: 340px;
-            height: 340px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* Ground line */
-        .ground {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 180px;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--green-bright), transparent);
-            animation: groundFade 0.5s ease forwards;
-        }
-
-        /* Stem */
-        .stem {
-            position: absolute;
-            bottom: 42px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 3px;
-            background: linear-gradient(to top, var(--green-bright), var(--green-glow));
-            height: 0;
-            border-radius: 3px;
-            animation: growStem 1s cubic-bezier(0.22,1,0.36,1) 0.4s forwards;
-            transform-origin: bottom center;
-        }
-
-        @keyframes growStem {
-            to { height: 140px; }
-        }
-
-        /* Leaves */
-        .leaf-svg {
-            position: absolute;
-            opacity: 0;
-            transform-origin: bottom center;
-        }
-
-        /* Left leaf */
-        .leaf-left {
-            bottom: 120px;
-            left: calc(50% - 70px);
-            animation: growLeafLeft 0.8s cubic-bezier(0.34,1.56,0.64,1) 1.3s forwards;
-        }
-
-        /* Right leaf */
-        .leaf-right {
-            bottom: 145px;
-            left: calc(50% - 10px);
-            animation: growLeafRight 0.8s cubic-bezier(0.34,1.56,0.64,1) 1.7s forwards;
-        }
-
-        /* Top leaf */
-        .leaf-top {
-            bottom: 178px;
-            left: calc(50% - 35px);
-            animation: growLeafTop 0.8s cubic-bezier(0.34,1.56,0.64,1) 2.1s forwards;
-        }
-
-        @keyframes growLeafLeft {
-            0% { opacity: 0; transform: scale(0) rotate(-40deg); }
-            60% { opacity: 1; transform: scale(1.15) rotate(-25deg); }
-            100% { opacity: 1; transform: scale(1) rotate(-30deg); }
-        }
-
-        @keyframes growLeafRight {
-            0% { opacity: 0; transform: scale(0) rotate(20deg); }
-            60% { opacity: 1; transform: scale(1.15) rotate(35deg); }
-            100% { opacity: 1; transform: scale(1) rotate(28deg); }
-        }
-
-        @keyframes growLeafTop {
-            0% { opacity: 0; transform: scale(0) rotate(-5deg); }
-            60% { opacity: 1; transform: scale(1.15) rotate(5deg); }
-            100% { opacity: 1; transform: scale(1) rotate(0deg); }
-        }
-
-        /* Gentle sway after grow */
-        .leaf-left  { animation: growLeafLeft 0.8s cubic-bezier(0.34,1.56,0.64,1) 1.3s forwards, swayLeft  3s ease-in-out 2.2s infinite; }
-        .leaf-right { animation: growLeafRight 0.8s cubic-bezier(0.34,1.56,0.64,1) 1.7s forwards, swayRight 3s ease-in-out 2.6s infinite; }
-        .leaf-top   { animation: growLeafTop  0.8s cubic-bezier(0.34,1.56,0.64,1) 2.1s forwards, swayTop   3s ease-in-out 3s   infinite; }
-
-        @keyframes swayLeft {
-            0%,100% { transform: scale(1) rotate(-30deg); }
-            50%      { transform: scale(1) rotate(-25deg); }
-        }
-        @keyframes swayRight {
-            0%,100% { transform: scale(1) rotate(28deg); }
-            50%      { transform: scale(1) rotate(34deg); }
-        }
-        @keyframes swayTop {
-            0%,100% { transform: scale(1) rotate(0deg); }
-            50%      { transform: scale(1) rotate(6deg); }
-        }
-
-        /* Dew drops */
-        .dew {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: rgba(0,210,106,0.7);
-            filter: blur(1px);
-            opacity: 0;
-        }
-
-        .dew-1 { bottom: 190px; left: calc(50% - 18px); animation: dewDrop 1s ease 2.9s forwards; }
-        .dew-2 { bottom: 220px; left: calc(50% + 8px);  animation: dewDrop 1s ease 3.2s forwards; }
-
-        @keyframes dewDrop {
-            0%  { opacity: 0; transform: translateY(0); }
-            20% { opacity: 1; }
-            100%{ opacity: 0; transform: translateY(30px); }
-        }
-
-        /* Glow ring at base */
-        .glow-ring {
-            position: absolute;
-            bottom: 36px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(0,210,106,0.25) 0%, transparent 70%);
-            animation: glowExpand 1s ease 0.3s forwards;
-        }
-
-        @keyframes glowExpand {
-            to { width: 120px; height: 120px; margin-left: -60px; margin-bottom: -60px; }
-        }
-
-        /* Logo + text */
-        .brand {
-            position: absolute;
-            bottom: -60px;
-            left: 50%;
-            transform: translateX(-50%);
+        .splash {
             text-align: center;
-            opacity: 0;
-            animation: fadeUp 0.8s ease 2.5s forwards;
-            white-space: nowrap;
+            animation: fadeIn 0.5s ease;
         }
-
-        .brand-name {
-            font-size: 32px;
-            font-weight: 700;
-            letter-spacing: 3px;
-            color: var(--cream);
-            text-shadow: 0 0 20px rgba(0,210,106,0.4);
+        .logo {
+            width: 100px;
+            height: 100px;
+            background: #2ecc71;
+            border-radius: 28px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: bounce 0.6s ease;
         }
-
-        .brand-sub {
-            font-size: 11px;
-            letter-spacing: 4px;
-            color: var(--green-glow);
-            margin-top: 4px;
-            font-weight: 400;
-        }
-
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateX(-50%) translateY(10px); }
-            to   { opacity: 1; transform: translateX(-50%) translateY(0); }
-        }
-
-        /* Floating particles */
-        .particle {
-            position: fixed;
-            border-radius: 50%;
-            background: rgba(0,210,106,0.2);
-            pointer-events: none;
-            animation: floatUp linear infinite;
-        }
-
-        @keyframes floatUp {
-            0%   { transform: translateY(110vh) scale(0); opacity: 0; }
-            10%  { opacity: 1; }
-            90%  { opacity: 0.6; }
-            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
-        }
-
-        @keyframes groundFade {
-            from { opacity: 0; } to { opacity: 1; }
+        .logo img { width: 60px; height: 60px; }
+        h1 { color: white; font-size: 40px; margin-bottom: 8px; }
+        p { color: rgba(255,255,255,0.8); font-size: 12px; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes bounce {
+            0% { transform: scale(0.8); opacity: 0; }
+            80% { transform: scale(1.05); }
+            100% { transform: scale(1); opacity: 1; }
         }
     </style>
 </head>
 <body>
-
-    <!-- Floating particles -->
-    <script>
-        for (let i = 0; i < 12; i++) {
-            const p = document.createElement('div');
-            p.className = 'particle';
-            const size = Math.random() * 6 + 3;
-            p.style.cssText = `
-                width:${size}px; height:${size}px;
-                left:${Math.random()*100}%;
-                animation-duration:${10+Math.random()*12}s;
-                animation-delay:${Math.random()*8}s;
-            `;
-            document.body.appendChild(p);
-        }
-    </script>
-
-    <div class="scene">
-        <!-- Glow at base -->
-        <div class="glow-ring"></div>
-
-        <!-- Ground -->
-        <div class="ground"></div>
-
-        <!-- Stem -->
-        <div class="stem"></div>
-
-        <!-- Left leaf -->
-        <svg class="leaf-svg leaf-left" width="70" height="50" viewBox="0 0 70 50">
-            <defs>
-                <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#2ecc71"/>
-                    <stop offset="100%" stop-color="#0a4a22"/>
-                </linearGradient>
-            </defs>
-            <path d="M60,45 Q0,40 5,5 Q35,15 60,45 Z" fill="url(#lg1)" opacity="0.95"/>
-            <path d="M60,45 Q30,30 5,5" stroke="rgba(0,210,106,0.4)" stroke-width="1" fill="none"/>
-            <path d="M60,45 Q40,25 20,8" stroke="rgba(0,210,106,0.2)" stroke-width="0.7" fill="none"/>
-        </svg>
-
-        <!-- Right leaf -->
-        <svg class="leaf-svg leaf-right" width="65" height="48" viewBox="0 0 65 48">
-            <defs>
-                <linearGradient id="lg2" x1="100%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stop-color="#27ae60"/>
-                    <stop offset="100%" stop-color="#1a5c35"/>
-                </linearGradient>
-            </defs>
-            <path d="M5,43 Q65,38 60,4 Q30,14 5,43 Z" fill="url(#lg2)" opacity="0.95"/>
-            <path d="M5,43 Q35,28 60,4" stroke="rgba(0,210,106,0.4)" stroke-width="1" fill="none"/>
-        </svg>
-
-        <!-- Top leaf -->
-        <svg class="leaf-svg leaf-top" width="60" height="80" viewBox="0 0 60 80">
-            <defs>
-                <linearGradient id="lg3" x1="50%" y1="100%" x2="50%" y2="0%">
-                    <stop offset="0%" stop-color="#2ecc71"/>
-                    <stop offset="100%" stop-color="#00d26a"/>
-                </linearGradient>
-            </defs>
-            <path d="M30,75 Q0,40 15,5 Q30,20 45,5 Q60,40 30,75 Z" fill="url(#lg3)" opacity="0.95"/>
-            <path d="M30,75 Q30,40 30,5" stroke="rgba(255,255,255,0.2)" stroke-width="1" fill="none"/>
-        </svg>
-
-        <!-- Dew drops -->
-        <div class="dew dew-1"></div>
-        <div class="dew dew-2"></div>
-
-        <!-- Brand -->
-        <div class="brand">
-            <div class="brand-name">Tribly</div>
-            <div class="brand-sub">GROWING TOGETHER</div>
+    <div class="splash">
+        <div class="logo">
+            <img src="maskable_icon (2).png" alt="Tribly">
         </div>
+        <h1>Tribly</h1>
+        <p>GROWING TOGETHER</p>
     </div>
-
-    <script>
-        // Redirect after animation finishes
-        setTimeout(function() {
-            window.location.replace("https://triblyapp.infinityfreeapp.com/");
-        }, 4500);
-    </script>
+    <script>setTimeout(() => location.href = "https://triblyapp.infinityfreeapp.com/", 2000);</script>
 </body>
 </html>
