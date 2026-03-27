@@ -1,35 +1,35 @@
-&lt;div align="center"&gt;
+<div align="center">
 
-  &lt;img src="maskable_icon (2).png" alt="Tribly Logo" width="120" height="120" style="border-radius: 20px; box-shadow: 0 8px 32px rgba(0, 178, 72, 0.3);"/&gt;
+  <img src="maskable_icon (2).png" alt="Tribly Logo" width="120" height="120" style="border-radius: 20px; box-shadow: 0 8px 32px rgba(0, 178, 72, 0.3);"/>
 
   # 🌿 Tribly
 
   ### **منصة التواصل الاجتماعي التي تجمعك بأصحابك بطريقة مختلفة**
 
-  &lt;p align="center"&gt;
-    &lt;a href="https://triblyapp.infinityfreeapp.com"&gt;
-      &lt;img src="https://img.shields.io/badge/🌐_Live_Demo-00B248?style=for-the-badge&logoColor=white" alt="Live Demo"/&gt;
-    &lt;/a&gt;
-    &lt;a href="#"&gt;
-      &lt;img src="https://img.shields.io/badge/Status-Active-C6F135?style=for-the-badge&logoColor=black" alt="Status"/&gt;
-    &lt;/a&gt;
-    &lt;a href="#"&gt;
-      &lt;img src="https://img.shields.io/badge/Platform-Web-00B248?style=for-the-badge&logoColor=white" alt="Platform"/&gt;
-    &lt;/a&gt;
-    &lt;a href="#"&gt;
-      &lt;img src="https://img.shields.io/badge/Language-🇪🇬_Arabic-C6F135?style=for-the-badge&logoColor=black" alt="Language"/&gt;
-    &lt;/a&gt;
-  &lt;/p&gt;
+  <p align="center">
+    <a href="https://triblyapp.infinityfreeapp.com">
+      <img src="https://img.shields.io/badge/🌐_Live_Demo-00B248?style=for-the-badge&logoColor=white" alt="Live Demo"/>
+    </a>
+    <a href="#">
+      <img src="https://img.shields.io/badge/Status-Active-C6F135?style=for-the-badge&logoColor=black" alt="Status"/>
+    </a>
+    <a href="#">
+      <img src="https://img.shields.io/badge/Platform-Web-00B248?style=for-the-badge&logoColor=white" alt="Platform"/>
+    </a>
+    <a href="#">
+      <img src="https://img.shields.io/badge/Language-🇪🇬_Arabic-C6F135?style=for-the-badge&logoColor=black" alt="Language"/>
+    </a>
+  </p>
 
-  &lt;p align="center"&gt;
-    &lt;a href="https://triblyapp.infinityfreeapp.com"&gt;&lt;strong&gt;🚀 جرب التطبيق الآن&lt;/strong&gt;&lt;/a&gt; •
-    &lt;a href="#-المميزات"&gt;المميزات&lt;/a&gt; •
-    &lt;a href="#-لقطات-الشاشة"&gt;لقطات الشاشة&lt;/a&gt; •
-    &lt;a href="#-التقنيات-المستخدمة"&gt;التقنيات&lt;/a&gt; •
-    &lt;a href="#-كيف-تبدأ"&gt;كيف تبدأ&lt;/a&gt;
-  &lt;/p&gt;
+  <p align="center">
+    <a href="https://triblyapp.infinityfreeapp.com"><strong>🚀 جرب التطبيق الآن</strong></a> •
+    <a href="#-المميزات">المميزات</a> •
+    <a href="#-لقطات-الشاشة">لقطات الشاشة</a> •
+    <a href="#-التقنيات-المستخدمة">التقنيات</a> •
+    <a href="#-كيف-تبدأ">كيف تبدأ</a>
+  </p>
 
-&lt;/div&gt;
+</div>
 
 ---
 
@@ -49,6 +49,7 @@
     - [Design System](#design-system)
   - [🚀 كيف تبدأ](#-كيف-تبدأ)
     - [الطريقة السريعة (الموقع المباشر)](#الطريقة-السريعة-الموقع-المباشر)
+    - [هيكل المشروع](#هيكل-المشروع)
 
 ---
 
@@ -79,29 +80,14 @@
 
 ## 📸 لقطات الشاشة
 
-&lt;div align="center"&gt;
+<div align="center">
 
-  &lt;table&gt;
-    &lt;tr&gt;
-      &lt;td align="center"&gt;
-        &lt;img src="screenshots/home.png" alt="الصفحة الرئيسية" width="250"/&gt;
-        &lt;br/&gt;
-        &lt;sub&gt;&lt;b&gt;الصفحة الرئيسية&lt;/b&gt;&lt;/sub&gt;
-      &lt;/td&gt;
-      &lt;td align="center"&gt;
-        &lt;img src="screenshots/profile.png" alt="الملف الشخصي" width="250"/&gt;
-        &lt;br/&gt;
-        &lt;sub&gt;&lt;b&gt;الملف الشخصي&lt;/b&gt;&lt;/sub&gt;
-      &lt;/td&gt;
-      &lt;td align="center"&gt;
-        &lt;img src="screenshots/messages.png" alt="المحادثات" width="250"/&gt;
-        &lt;br/&gt;
-        &lt;sub&gt;&lt;b&gt;المحادثات&lt;/b&gt;&lt;/sub&gt;
-      &lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/table&gt;
+| الصفحة الرئيسية | الملف الشخصي | المحادثات |
+|----------------|---------------|------------|
+| <img src="screenshots/home.png" alt="الصفحة الرئيسية" width="250"/> | <img src="screenshots/profile.png" alt="الملف الشخصي" width="250"/> | <img src="screenshots/messages.png" alt="المحادثات" width="250"/> |
+| **الصفحة الرئيسية** | **الملف الشخصي** | **المحادثات** |
 
-&lt;/div&gt;
+</div>
 
 ---
 
@@ -130,71 +116,51 @@
 ## 🚀 كيف تبدأ
 
 ### الطريقة السريعة (الموقع المباشر)
-```bash
-# 1. افتح الموقع
-https://triblyapp.infinityfreeapp.com
+1. افتح الموقع: [Tribly](https://triblyapp.infinityfreeapp.com)
+2. أنشئ حسابك مجاناً
+3. ابدأ التواصل! 🎉
 
-# 2. أنشئ حسابك مجاناً
-# 3. ابدأ التواصل! 🎉
+### هيكل المشروع
+```text
 tribly/
-├── 📄 index.html              # الصفحة الرئيسية
-├── 📄 login.php               # صفحة تسجيل الدخول
-├── 📄 register.php            # صفحة إنشاء حساب
-├── 📄 profile.php             # الملف الشخصي
-├── 📄 home.php                # الخط الزمني
-├── 📄 messages.php            # المحادثات
-├── 📄 loader.html             # صفحة التحميل
-├── 📄 logout.php              # تسجيل الخروج
-│
-├── 🎨 css/
-│   ├── style.css              # الأنماط الرئيسية
-│   ├── dark-mode.css          # أنماط الوضع الليلي
-│   └── components.css         # مكونات UI
-│
-├── ⚡ js/
-│   ├── main.js                # المنطق الرئيسي
-│   ├── audio-recorder.js      # تسجيل الصوت
-│   └── interactions.js        # التفاعلات
-│
-├── 🖼️ assets/
-│   ├── logo icon.png          # اللوجو الأساسي
-│   ├── maskable_icon (2).png  # أيقونة PWA
-│   └── screenshots/           # لقطات الشاشة
-│
-└── 📖 README.md               # هذا الملف
+├── index.html
+├── login.php
+├── register.php
+├── profile.php
+├── home.php
+├── messages.php
+├── loader.html
+├── logout.php
+├── css/
+│   ├── style.css
+│   ├── dark-mode.css
+│   └── components.css
+├── js/
+│   ├── main.js
+│   ├── audio-recorder.js
+│   └── interactions.js
+├── assets/
+│   ├── logo icon.png
+│   ├── maskable_icon (2).png
+│   └── screenshots/
+└── README.md
 
 🤝 المساهمة
-نرحب بمساهماتكم! إذا كنت ترغب في المساهمة:
+نرحب بمساهماتكم!
 🍴 Fork المستودع
 🌿 أنشئ branch جديد (git checkout -b feature/amazing-feature)
 💾 Commit التغييرات (git commit -m 'Add amazing feature')
 📤 Push للbranch (git push origin feature/amazing-feature)
 🔃 افتح Pull Request
-🗺️ خارطة الطريق
-[x] ✅ إطلاق النسخة الأولى
-[x] ✅ دعم الرسائل الصوتية
-[x] ✅ نظام الإعجابات والمشاهدات
-[ ] 🔄 تطبيق موبايل (iOS & Android)
-[ ] 🔄 مكالمات صوتية وفيديو
-[ ] 🔄 نظام الإشعارات الفورية
-[ ] 🔄 دعم اللغات المتعددة
 
 
 © 2026 Tribly — جميع الحقوق محفوظة.
 
-
-
 👨‍💻 المؤلف
+
 فريق Tribly — صُنع بـ 💚 في مصر
-<div align="center">
-https://facebook.com/tribly
-https://instagram.com/tribly_app
-mailto:triblyteam@gmail.com
-</div>
-<div align="center">
-🌿 شكراً لزيارتك Tribly! 🌿
-  <img src="https://img.shields.io/badge/Made_with_💚_in_Egypt-00B248?style=for-the-badge" alt="Made with love"/>
-  <br/>
-⬆️ رجوع للأعلى
-</div>
-```
+Facebook
+ | Instagram
+ | Email
+
+<div align="center"> 🌿 شكراً لزيارتك Tribly! 🌿 <img src="https://img.shields.io/badge/Made_with_💚_in_Egypt-00B248?style=for-the-badge" alt="Made with love"/> <br/>⬆️ [رجوع للأعلى](#-tribly) </div> ```
